@@ -1,0 +1,12 @@
+.product-list {
+   padding-top: 55px;
+}
+
+.product-list img {
+   max-width: 200px;
+}
+
+button{
+    padding: 5px 10px;
+    margin: 0px 5px;
+}
