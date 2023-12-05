@@ -1,19 +1,12 @@
+<app-filter
+[all]="totalProductCount"
+ [inStock]="totalProductInstock"
+ [outofstock]="totalProductoutofstock"
+ (selectedFilterRadioButtonChanged)="onFilterChanged($event)">
+</app-filter>
 <div class="RAYE--products--container">
-   <div class="RAYE--product--item" *ngFor="let prod of products">
-      <div class="RAYE-wishlist-sale-container">
-         <div class="RAYE--add--to--wishlist">
-            <i class="fa fa-heart-o" aria-hidden="true"></i>
-         </div>
-         <!-- <div class="RAYE-on-sale-tag">75% OFF</div>-->
-       </div>
-       <div class="RAYE--product--image">
-           <img [src]="prod.imageURL" class="RAYE--product--image">
-       </div>
-       <div class="RAYE--add--to--price">
-           {{ prod.price}}
-       </div>
-       <div class="RAYE--product--name">{{prod.name}}</div>
-       <div class="RAYE--product--category">{{ prod.gender}} . {{ prod.category }} . {{prod.brand}}</div>
-       <div class="RAYE--product--available-colors">{{prod.color.length}} Colors . Best Seller</div>
-   </div>
+     <div *ngFor="let prod of products" (click)="selectedProduct = prod">
+      <app-product  [product]="prod" *ngIf="searchText === '' || prod.name.toLowerCase().includes(searchText)"></app-product>
+     </div>
 </div>
+<!--*ngIf="selectedFilterRadioButton === 'all' || prod.is_in_inventory.toString() === selectedFilterRadioButton"-->

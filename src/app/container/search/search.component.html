@@ -1,5 +1,10 @@
 <div class="RAYE--search--product">
-       <input class="RAYE-search-product-input" [(ngModel)]="searchText">
-       <button class="btn btn-search">Search</button>
+       <input class="RAYE-search-product-input" #searchInput>
+       <button class="btn btn-search" (click)="updateSearchText(searchInput)">Search</button>
     </div>
-     <div class="RAYE-search-result-for"><p><strong>Search result for:</strong> {{ searchText }}</p></div>
+     <div class="RAYE-search-result-for">
+      <p *ngIf="searchText !=''"><strong>Search result for:</strong> {{ searchText }}</p>
+    </div>
+
+
+    <!--false, '', null, undefined, 0 -->

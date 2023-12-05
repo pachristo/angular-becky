@@ -1,0 +1,19 @@
+<div class="RAYE--product--item" >
+  <div class="RAYE-wishlist-sale-container">
+     <div class="RAYE--add--to--wishlist">
+        <i class="fa fa-heart-o" aria-hidden="true"></i>
+                 </div>
+       <div class="RAYE-on-sale-tag" *ngIf="product.discountprice">{{ (100-(product.discountprice / product.price * 100)).toFixed(0)}}% OFF</div>
+   </div>
+   <div class="RAYE--product--image">
+       <img [src]="product.imageURL" class="RAYE--product--image">
+   </div>
+   <div class="RAYE--add--to--price">
+       {{ product.price}}
+   </div>
+   <div class="RAYE--product--name">{{product.name}}</div>
+   <div class="RAYE--product--category">{{ product.gender}} . {{ product.category }} . {{product.brand}}</div>
+   <div class="RAYE--product--available-colors">{{product.color.length}} Colors . Best Seller</div>
+   <div class="RAYE--product--in--stock" [ngStyle]="{fontWeight: 'bold', color:product.is_in_inventory? '#008000' : '#ff0000'}">
+    {{ product.is_in_inventory ? 'Available in stock' : 'Not available in stock'}}</div>
+</div>
