@@ -122,3 +122,17 @@ span{
     border-radius: 5px;
     -webkit-box-shadow: inset 0 0 6px #28282B;
 }
+
+
+/* new css */
+
+.RAYE--product--details--info.scroll {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  /* text-align: center; */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  max-width: 59%;
+  margin-left: auto;
+  margin-right: auto;
+}
